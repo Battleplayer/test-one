@@ -11,7 +11,7 @@ import {NavbarRoutingModule} from "./navbar-routing.module";
         SharedModule
     ],
     declarations: [NavbarComponent],
-    exports:[NavbarComponent]
+    exports: [NavbarComponent]
 })
 export class NavbarModule {
 }

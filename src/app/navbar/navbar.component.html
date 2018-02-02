@@ -1,5 +1,16 @@
-<nav class="navbar navbar-light bg-faded">
-  <h1 class="navbar-brand mb-0">TODOLIST</h1>
-  <a routerLink="/" class="nav-link">Todo list</a>
-  <a routerLink="/new" class="nav-link">New item</a>
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li class="brand"><h1 class="navbar-brand mb-0">TODOLIST</h1></li>
+      <li routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact:true}">
+        <a routerLink="/" class="nav-link">Todo list</a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/new" class="nav-link">New item</a>
+      </li>
+      <li>
+      </li>
+    </ul>
+  </div>
 </nav>

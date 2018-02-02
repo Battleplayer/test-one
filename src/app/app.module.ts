@@ -6,7 +6,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {MainPageModule} from "./main-page/main-page.module";
 import {ListService} from "./shared/services/list.service";
-import {NotFoundModule} from "./not-found/not-found.module";
+import {NotFoundModule} from "./shared/not-found/not-found.module";
 import {SharedModule} from "./shared/shared.module";
 import {NavbarModule} from "./navbar/navbar.module";
 
