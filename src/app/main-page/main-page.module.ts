@@ -5,6 +5,7 @@ import {NewPageModule} from "./new-page/new-page.module";
 import {EditPageModule} from "./edit-page/edit-page.module";
 import {SharedModule} from "../shared/shared.module";
 import {ItemPageModule} from "./itempage/itempage.module";
+import {MainPageRoutingModule} from "./main-page-routing.module";
 
 @NgModule({
     imports: [
@@ -12,6 +13,7 @@ import {ItemPageModule} from "./itempage/itempage.module";
         NewPageModule,
         EditPageModule,
         ItemPageModule,
+        MainPageRoutingModule,
         SharedModule
     ],
     declarations: [MainPageComponent]
