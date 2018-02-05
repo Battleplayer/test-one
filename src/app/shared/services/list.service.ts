@@ -81,7 +81,7 @@ export class ListService {
         },
     ];
 
-    newDo(name:string, content:string, file:any, comment:any) {
+    newDo(name: string, content: string, file: any, comment: any) {
         this.todolist.push({name, content, file, comment})
     }
 
