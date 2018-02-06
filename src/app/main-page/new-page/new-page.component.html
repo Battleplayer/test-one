@@ -1,7 +1,7 @@
 <div class="col-lg-8 col-lg-offset-2">
   <form (ngSubmit)="formSubmit(form)" #form="ngForm">
     <div class="form-group">
-      <label>NAME !</label>
+      <label>Name</label>
       <input type="text" required class="form-control" ngModel name="form_name" #name="ngModel">
       <p *ngIf="name.invalid && name.touched">Enter name!</p>
     </div>
@@ -29,6 +29,7 @@
       <label>Comment date</label>
       <input type="text" class="form-control" ngModel name="form_comment_date">
     </div>
-    <button class="btn btn-success" type="submit" [disabled]="!form.valid">Add</button>
+    <button class="btn btn-success" type="submit" [disabled]="!form.valid" >Add</button>
   </form>
+  <div id="snackbar">Data stored</div>
 </div>

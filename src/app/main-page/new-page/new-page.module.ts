@@ -12,8 +12,7 @@ import {FormsModule} from "@angular/forms";
         FormsModule,
         SharedModule
     ],
-    declarations: [NewPageComponent],
-    exports: [NewPageComponent]
+    declarations: [NewPageComponent]
 })
 export class NewPageModule {
 }

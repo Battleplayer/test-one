@@ -10,8 +10,7 @@ import {SharedModule} from "../../shared/shared.module";
         ItemPageRoutingModule,
         SharedModule
     ],
-    declarations: [ItempageComponent],
-    exports: [ItempageComponent]
+    declarations: [ItempageComponent]
 })
 export class ItemPageModule {
 }

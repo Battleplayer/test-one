@@ -8,8 +8,7 @@ import {EditPageRoutingModule} from './edit-page-routing.module';
         CommonModule,
         EditPageRoutingModule
     ],
-    declarations: [EditPageComponent],
-    exports: [EditPageComponent]
+    declarations: [EditPageComponent]
 })
 export class EditPageModule {
 }

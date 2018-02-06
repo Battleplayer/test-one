@@ -1,21 +1,20 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
 import {MainPageComponent} from "./main-page/main-page.component";
 import {NotFoundComponent} from "./shared/not-found/not-found.component";
-import {NewPageComponent} from "./main-page/new-page/new-page.component";
-import {EditPageComponent} from "./main-page/edit-page/edit-page.component";
-import {ItempageComponent} from "./main-page/itempage/itempage.component";
 
 const routes: Routes = [
     {path: '', component: MainPageComponent},
-    {path: 'new', component: NewPageComponent},
-    {path: 'edit', component: EditPageComponent},
-    {path: ':name', component: ItempageComponent},
+    {path: 'new', loadChildren: 'app/main-page/new-page/new-page.module#NewPageModule'},
+    {path: 'edit', loadChildren: 'app/main-page/edit-page/edit-page.module#EditPageModule'},
+    {path: ':name', loadChildren: 'app/main-page/itempage/itempage.module#ItemPageModule'},
     {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
+    imports: [RouterModule.forRoot(routes, {
+        preloadingStrategy: PreloadAllModules
+    })],
     exports: [RouterModule]
 })
 export class AppRoutingModule {
