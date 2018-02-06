@@ -10,7 +10,7 @@ export class ListService {
         {
             name: "number1",
             content: "sometext1",
-            file: "",
+            // file: "",
             comment: [
                 {
                     author: "name1 none",
@@ -22,7 +22,7 @@ export class ListService {
         {
             name: "number2",
             content: "sometext2",
-            file: "",
+            // file: "",
             comment: [
                 {
                     author: "name1 none",
@@ -34,7 +34,7 @@ export class ListService {
         {
             name: "number3",
             content: "sometext3",
-            file: "",
+            // file: "",
             comment: [
                 {
                     author: "name1 none",
@@ -46,7 +46,7 @@ export class ListService {
         {
             name: "number4",
             content: "sometext4",
-            file: "",
+            // file: "",
             comment: [
                 {
                     author: "name1 none",
@@ -58,7 +58,7 @@ export class ListService {
         {
             name: "number5",
             content: "sometext5",
-            file: "",
+            // file: "",
             comment: [
                 {
                     author: "name1 none",
@@ -70,7 +70,7 @@ export class ListService {
         {
             name: "number6",
             content: "sometext6",
-            file: "",
+            // file: "",
             comment: [
                 {
                     author: "name5 none",
@@ -81,8 +81,18 @@ export class ListService {
         },
     ];
 
-    newDo(name: string, content: string, file: any, comment: any) {
-        this.todolist.push({name, content, file, comment})
+    newDo(name:string, content:string, comment:any) {
+        this.todolist.push({
+            name, content, comment: [
+                // Попробовать через comment.author
+                // или не черещ объект,а comment_author
+                author,
+                content,
+                date
+            ]
+        })
     }
-
 }
+
+
+
