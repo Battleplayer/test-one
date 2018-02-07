@@ -1,35 +1,35 @@
 <div class="col-lg-8 col-lg-offset-2">
-	<form (ngSubmit)="formSubmit(form)" #form="ngForm">
-		<div class="form-group">
-			<label>Name</label>
-			<input type="text" required class="form-control" ngModel name="form_name" #name="ngModel">
-			<p *ngIf="name.invalid && name.touched">Enter name!</p>
-		</div>
-		<div class="form-group">
-			<label>Content</label>
-			<input type="text" required class="form-control" ngModel name="form_content" #content="ngModel">
-			<p *ngIf="content.invalid && content.touched">Enter content!</p>
-		</div>
-		<!--<div class="form-group">-->
-		<!--<label>File</label>-->
-		<!--<input type="file"  class="form-control" ngModel name="form_file">-->
-		<!--</div>-->
-		<div class="form-group">
-			<label>Comment author</label>
-			<input type="text" required class="form-control" pattern="^\S+\s\S+$" ngModel name="form_comment_author"
-			       #comment_author="ngModel">
-			<p *ngIf="comment_author.invalid && comment_author.touched">2 words required!</p>
-		</div>
-		<div class="form-group">
-			<label>Comment content</label>
-			<input type="text" required class="form-control" ngModel name="form_comment_content" #comment_content="ngModel">
-			<p *ngIf="comment_content.invalid && comment_content.touched">Enter comment_content!</p>
-		</div>
-		<div class="form-group" hidden>
-			<label>Comment date</label>
-			<input type="text" class="form-control" ngModel name="form_comment_date" [(ngModel)]="val">
-		</div>
-		<button class="btn btn-success" type="submit" [disabled]="!form.valid">Create new task</button>
-	</form>
-	<div id="snackbar">Data stored</div>
+  <form (ngSubmit)="formSubmit(form)" #form="ngForm">
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" required class="form-control" ngModel name="form_name" #name="ngModel">
+      <p *ngIf="name.invalid && name.touched">Enter name!</p>
+    </div>
+    <div class="form-group">
+      <label>Content</label>
+      <input type="text" required class="form-control" ngModel name="form_content" #content="ngModel">
+      <p *ngIf="content.invalid && content.touched">Enter content!</p>
+    </div>
+    <div class="form-group">
+      <label>File</label>
+      <input type="file" class="form-control" ngModel name="form_file" #file (change)="onChange(file.files)">
+    </div>
+    <div class="form-group">
+      <label>Comment author</label>
+      <input type="text" required class="form-control" pattern="/^\b[A-Z][a-z]*(\s*\b[A-Z][a-z]*\b)*$/" ngModel name="form_comment_author"
+             #comment_author="ngModel">
+      <p *ngIf="comment_author.invalid && comment_author.touched">2 words required!</p>
+    </div>
+    <div class="form-group">
+      <label>Comment content</label>
+      <input type="text" required class="form-control" ngModel name="form_comment_content" #comment_content="ngModel">
+      <p *ngIf="comment_content.invalid && comment_content.touched">Enter comment_content!</p>
+    </div>
+    <div class="form-group" hidden>
+      <label>Comment date</label>
+      <input type="text" class="form-control" ngModel name="form_comment_date" [(ngModel)]="val">
+    </div>
+    <button class="btn btn-success" type="submit" [disabled]="!form.valid">Create new task</button>
+  </form>
+  <div id="snackbar">Data stored</div>
 </div>

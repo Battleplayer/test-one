@@ -1,9 +1,9 @@
-<div  *ngFor="let item of list">
-	<div class="mainpage" *ngFor="let com of item.comment">
-		<a routerLink="{{item.name}}">{{item.name}}</a>
-		<span>{{item.content}}</span>
-		<span>{{com.author}}</span>
-		<span>{{com.content}}</span>
-		<span>{{com.created}}</span>
-	</div>
+<div *ngFor="let item of list">
+  <div class="mainpage">
+    <a routerLink="{{item.name}}">{{item.name}}</a>
+    <span>{{item.content}}</span>
+    <span>{{item.author}}</span>
+    <span>{{item.content}}</span>
+    <span>{{item.created}}</span>
+  </div>
 </div>

@@ -9,6 +9,7 @@ import {ListService} from "./shared/services/list.service";
 import {NotFoundModule} from "./shared/not-found/not-found.module";
 import {SharedModule} from "./shared/shared.module";
 import {NavbarModule} from "./navbar/navbar.module";
+import {LocalStorageService} from "./shared/services/local-storage.service";
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import {NavbarModule} from "./navbar/navbar.module";
         NavbarModule,
         NotFoundModule
     ],
-    providers: [ListService],
+    providers: [ListService, LocalStorageService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
