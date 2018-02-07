@@ -11,8 +11,8 @@ export class MainPageComponent implements OnInit {
     list;
     lists;
 
-    constructor(private  listService: ListService,
-                private localStorageService: LocalStorageService) {
+    constructor(private  listService:ListService,
+                private localStorageService:LocalStorageService) {
     }
 
     ngOnInit() {
@@ -21,4 +21,11 @@ export class MainPageComponent implements OnInit {
         console.log(this.list);
     }
 
+    delete(item:any) {
+        let index = this.list.indexOf(item);
+        if (index > -1) {
+            this.list.splice(index, 1);
+        }
+
+    }
 }

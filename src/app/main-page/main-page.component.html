@@ -1,9 +1,10 @@
 <div *ngFor="let item of list">
-  <div class="mainpage">
-    <a routerLink="{{item.name}}">{{item.name}}</a>
-    <span>{{item.content}}</span>
-    <span>{{item.author}}</span>
-    <span>{{item.content}}</span>
-    <span>{{item.created}}</span>
-  </div>
+	<div class="mainpage">
+		<a routerLink="{{item.name}}">{{item.name}}</a>
+		<span>{{item.content}}</span>
+		<span>{{item.author}}</span>
+		<span>{{item.content}}</span>
+		<span>{{item.created}}</span>
+		<button class="btn btn-danger" (click)="delete(item)">DELETE</button>
+	</div>
 </div>

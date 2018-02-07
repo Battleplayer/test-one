@@ -32,6 +32,8 @@ export class NewPageComponent implements OnInit {
         }
         this.val = (values[0] + "." + values[1] + "." + date.getFullYear() + " " + +date.getHours() + ":" + date.getMinutes() );
         console.log(this.form);
+        // console.log(this.val);
+
         // ---snackbar---
         if (this.form.valid) {
             const x = document.getElementById("snackbar");
@@ -46,7 +48,7 @@ export class NewPageComponent implements OnInit {
             this.fileInfo,
             this.form.value.form_comment_content,
             this.form.value.form_comment_author,
-            this.form.value.form_comment_date
+            this.form.value.form_comment_created
         );
         console.log(this.tasks);
         // this.form.reset();
