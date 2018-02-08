@@ -10,15 +10,15 @@ import {LocalStorageService} from "../shared/services/local-storage.service";
 export class MainPageComponent implements OnInit {
     list;
     lists;
-
-    constructor(private  listService:ListService,
-                private localStorageService:LocalStorageService) {
-    }
-
+    //
+    // constructor(private  listService:ListService,
+    //             private localStorage:LocalStorageService) {
+    // }
+    //
     ngOnInit() {
-        this.localStorageService.setItem('lists', this.listService.todolist);
+    //     this.localStorage.setItem('lists', this.listService.todolist);
         this.list = JSON.parse(localStorage.getItem('lists'));
-        console.log(this.list);
+    //     console.log(this.list);
     }
 
     delete(item:any) {

@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from "@angular/core";
 import {ListService} from "../../shared/services/list.service";
 import {ActivatedRoute} from "@angular/router";
 import {NgForm} from "@angular/forms";
+import {LocalStorageService} from "../../shared/services/local-storage.service";
 
 @Component({
     selector: "app-edit-page",
@@ -24,7 +25,8 @@ export class EditPageComponent implements OnInit {
     public form_comment_created = (new Date().toLocaleString());
 
     constructor(private route: ActivatedRoute,
-                private listService: ListService) {
+                private listService: ListService,
+                private localStorage:LocalStorageService) {
     }
 
     onChange(files) {
@@ -35,7 +37,9 @@ export class EditPageComponent implements OnInit {
 
     ngOnInit() {
         this.name = this.route.snapshot.params["name"];
-        this.list = this.listService.todolist;
+        // this.list = this.listService.todolist;  ---------
+        this.list = JSON.parse(localStorage.getItem('lists'));
+        console.log(this.list);
         this.index = this.list.findIndex(filtername =>
             filtername["name"] === this.name);
         this.newlist = this.list.slice((this.index), (this.index + 1));

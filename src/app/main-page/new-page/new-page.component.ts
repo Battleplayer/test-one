@@ -9,12 +9,13 @@ import {LocalStorageService} from "../../shared/services/local-storage.service";
     styleUrls: ["./new-page.component.less"]
 })
 export class NewPageComponent implements OnInit {
-    @ViewChild("form") form: NgForm;
-    fileInfo: string;
+    @ViewChild("form") form:NgForm;
+    fileInfo;
+    lists;
+    list;
 
-
-    constructor(private tasks: ListService,
-                private localStorageService: LocalStorageService) {
+    constructor(private tasks:ListService,
+                private localStorageService:LocalStorageService) {
     }
 
     public created = (new Date().toLocaleString());
@@ -23,6 +24,7 @@ export class NewPageComponent implements OnInit {
         console.log(files);
         this.fileInfo = files[0].name;
     }
+
     formSubmit() {
         console.log(this.form);
         // ---snackbar---
@@ -33,15 +35,42 @@ export class NewPageComponent implements OnInit {
                 x.className = x.className.replace("show", "");
             }, 3000);
         }
-        this.tasks.newDo(
+        //--------------------
+        this.list = JSON.parse(localStorage.getItem('lists'));
+        // this.tasks.newDo(------
+        let newItem = [
             this.form.value.form_name,
             this.form.value.form_content,
             this.fileInfo,
             this.form.value.form_comment_content,
             this.form.value.form_comment_author,
             this.form.value.form_comment_created
-        );
-        console.log(this.tasks);
+        ];
+        console.log(newItem);
+
+
+        // newItem.push(JSON.parse(localStorage.getItem('lists')));
+        // localStorage.setItem('lists', JSON.stringify(newItem));
+
+
+        this.list = JSON.parse(localStorage.getItem('lists'));
+        let newlist = this.list;
+        newlist.push(newItem);
+
+        // this.list.push(newItem);
+        // localStorage.setItem('lists', newItem.join('|'));
+        // localStorage.setItem('lists', JSON.stringify(newItem));
+
+
+        // this.list.newDo(
+        //     this.form.value.form_name,
+        //     this.form.value.form_content,
+        //     this.fileInfo,
+        //     this.form.value.form_comment_content,
+        //     this.form.value.form_comment_author,
+        //     this.form.value.form_comment_created
+        // );
+
     }
 
     ngOnInit() {

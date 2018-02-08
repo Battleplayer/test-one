@@ -57,16 +57,16 @@ export class ListService {
         },
     ];
 
-    newDo(name: string,
-          content: string,
-          file: string,
-          comment_author: string,
-          comment_content: string,
-          comment_created: string) {
-        this.todolist.push({
-            name, content, file, comment_author, comment_content, comment_created
-        });
-    }
+    // newDo(name:string,
+    //       content:string,
+    //       file:string,
+    //       comment_author:string,
+    //       comment_content:string,
+    //       comment_created:string) {
+    //     this.todolist.push({
+    //         name, content, file, comment_author, comment_content, comment_created
+    //     });
+    // }
 }
 
 
