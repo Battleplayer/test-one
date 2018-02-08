@@ -1,9 +1,10 @@
 <div *ngFor="let item of newlist;">
-	<div class="mainpage" *ngFor="let com of item.comment">
+	<div class="mainpage">
 		<h1>{{item.name}}</h1>
 		<p>{{item.content}}</p>
-		<p>{{com.author}}</p>
-		<p>{{com.content}}</p>
-		<p>{{com.created}}</p>
+		<p>{{item.file}}</p>
+		<p>{{item.comment_author}}</p>
+		<p>{{item.comment_content}}</p>
+		<p>{{item.comment_created}}</p>
 	</div>
 </div>

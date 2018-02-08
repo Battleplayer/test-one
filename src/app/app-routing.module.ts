@@ -6,7 +6,7 @@ import {NotFoundComponent} from "./shared/not-found/not-found.component";
 const routes: Routes = [
     {path: '', component: MainPageComponent},
     {path: 'new', loadChildren: 'app/main-page/new-page/new-page.module#NewPageModule'},
-    {path: 'edit', loadChildren: 'app/main-page/edit-page/edit-page.module#EditPageModule'},
+    {path: 'edit/:name', loadChildren: 'app/main-page/edit-page/edit-page.module#EditPageModule'},
     {path: ':name', loadChildren: 'app/main-page/itempage/itempage.module#ItemPageModule'},
     {path: '**', component: NotFoundComponent}
 ];

@@ -22,9 +22,7 @@ export class ItempageComponent implements OnInit {
         this.list = this.listService.todolist;
         this.index = this.list.findIndex(filtername =>
             filtername['name'] === this.name);
-        // console.log(this.index);
         this.newlist = this.list.slice((this.index), (this.index + 1));
-        // console.log(this.newlist);
     }
 
 }

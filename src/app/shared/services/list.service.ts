@@ -11,7 +11,7 @@ export class ListService {
             name: 'number1',
             content: 'sometext1',
             file: 'somefile.txt',
-            comment_author: 'name1 none',
+            comment_author: 'Name None',
             comment_content: 'some few words',
             comment_created: '21:00'
         },
@@ -19,7 +19,7 @@ export class ListService {
             name: "number2",
             content: "sometext2",
             file: "somefile.txt",
-            comment_author: "name1 none",
+            comment_author: "Name None",
             comment_content: "some few words",
             comment_created: "22:40"
         },
@@ -27,7 +27,7 @@ export class ListService {
             name: "number3",
             content: "sometext3",
             file: "somefile.txt",
-            comment_author: "name4 none",
+            comment_author: "Name None",
             comment_content: "some few words",
             comment_created: "11:05"
         },
@@ -35,7 +35,7 @@ export class ListService {
             name: "number4",
             content: "sometext4",
             file: "somefile.txt",
-            comment_author: "name1 none",
+            comment_author: "Name None",
             comment_content: "some few words",
             comment_created: "01:10"
         },
@@ -43,7 +43,7 @@ export class ListService {
             name: "number5",
             content: "sometext5",
             file: "somefile.txt",
-            comment_author: "name5 none",
+            comment_author: "Name None",
             comment_content: "some few words",
             comment_created: "15:55"
         },
@@ -51,7 +51,7 @@ export class ListService {
             name: "number6",
             content: "sometext6",
             file: "somefile.txt",
-            comment_author: "name6 none",
+            comment_author: "Name None",
             comment_content: "some few words",
             comment_created: "21:00"
         },
