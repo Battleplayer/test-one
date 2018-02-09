@@ -1,20 +1,21 @@
-import {Component, OnInit} from '@angular/core';
-import {ListService} from "../shared/services/list.service";
+import {AfterContentChecked, Component} from '@angular/core';
 
 @Component({
     selector: 'app-main-page',
     templateUrl: './main-page.component.html',
     styleUrls: ['./main-page.component.less']
 })
-export class MainPageComponent implements OnInit {
+export class MainPageComponent implements AfterContentChecked {
     list;
+    lists;
 
-    constructor(private  listService:ListService ) {
-
+    ngAfterContentChecked() {
+        this.list = JSON.parse(localStorage.getItem('lists'));
     }
 
-    ngOnInit() {
-        this.list = this.listService.todolist;
+    delete(item: any) {
+        let index = this.list.indexOf(item);
+        this.list.splice(index, 1);
+        localStorage.setItem('lists', JSON.stringify(this.list));
     }
-
 }

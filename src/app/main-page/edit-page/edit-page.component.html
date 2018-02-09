@@ -1,3 +1,40 @@
-<p>
-  edit-page works!
-</p>
+<div class="col-lg-8 col-lg-offset-2">
+  <form (ngSubmit)="formSubmit(form)" #form="ngForm">
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" required class="form-control" ngModel name="name_f" #name_f="ngModel" [(ngModel)]="form_name">
+      <p *ngIf="name_f.invalid && name_f.touched">Enter name!</p>
+    </div>
+    <div class="form-group">
+      <label>Content</label>
+      <input type="text" required class="form-control" ngModel name="content_f" #content_f="ngModel"
+             [(ngModel)]="form_content">
+      <p *ngIf="content_f.invalid && content_f.touched">Enter content!</p>
+    </div>
+    <div class="form-group">
+      <label>File - previous value <span>{{form_file}}</span></label>
+      <input type="file" class="form-control" ngModel name="form_file_f" id="myFile" #file_f (change)="onChange(file_f.files)">
+    </div>
+    <div class="form-group">
+      <label>Comment author</label>
+      <input type="text" required class="form-control" ngModel name="form_comment_author_f"
+             [(ngModel)]="form_comment_author"
+             pattern="^\b[A-Z][a-z]*(\s*\b[A-Z][a-z]*\b)" #comment_author_f="ngModel">
+      <p *ngIf="comment_author_f.invalid && comment_author_f.touched">Two words capitalised required each, no symbols or
+        letters</p>
+    </div>
+    <div class="form-group">
+      <label>Comment content</label>
+      <input type="text" required class="form-control" ngModel name="form_comment_content_f"
+             #comment_content_f="ngModel" [(ngModel)]="form_comment_content">
+      <p *ngIf="comment_content_f.invalid && comment_content_f.touched">Enter comment_content!</p>
+    </div>
+    <div class="form-group" hidden>
+      <label>Comment date</label>
+      <input type="text" class="form-control" ngModel name="form_comment_created_f" [(ngModel)]="form_comment_created"
+             #comment_created="ngModel">
+    </div>
+    <button class="btn btn-success" type="submit" [disabled]="!form.valid">Update task</button>
+  </form>
+  <div id="snackbar">Task updated</div>
+</div>
