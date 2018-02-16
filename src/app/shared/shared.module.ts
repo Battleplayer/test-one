@@ -18,7 +18,9 @@ import {
     TooltipModule,
     TypeaheadModule
 } from 'ngx-bootstrap';
-import {ListService} from "./services/list.service";
+import {ListService} from './services/list.service';
+import {MethodsService} from './services/methods.service';
+import {LocalStorageService} from './services/local-storage.service';
 
 @NgModule({
     imports: [
@@ -59,7 +61,10 @@ import {ListService} from "./services/list.service";
         TypeaheadModule
     ],
     declarations: [],
-    providers:[ListService]
+    providers: [
+        ListService,
+        LocalStorageService,
+        MethodsService]
 })
 export class SharedModule {
 }

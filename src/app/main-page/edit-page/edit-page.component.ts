@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
 import {LocalStorageService} from '../../shared/services/local-storage.service';
 
@@ -24,14 +24,15 @@ export class EditPageComponent implements OnInit {
     public form_comment_created = (new Date().toLocaleString());
 
     constructor(private route: ActivatedRoute,
-                private localStorage: LocalStorageService) {
+                private router: Router,
+                // private localStorage: LocalStorageService
+    ) {
     }
 
     onChange(files) {
-        console.log(files);
+        // console.log(files);
         if (files[0].size > 2000000) {
             alert('TO BIG! Maximum file size 2 Mbyte.  We won\'t upload it.');
-            // document.getElementById('myFile').value = '';
         } else {
             this.fileInfo = files[0].name;
         }
@@ -40,11 +41,11 @@ export class EditPageComponent implements OnInit {
     ngOnInit() {
         this.name = this.route.snapshot.params['name'];
         this.list = JSON.parse(localStorage.getItem('lists'));
-        console.log(this.list);
+        // console.log(this.list);
         this.index = this.list.findIndex(filtername =>
             filtername['name'] === this.name);
         this.newlist = this.list.slice((this.index), (this.index + 1));
-        console.log(this.newlist[0]);
+        // console.log(this.newlist[0]);
         this.form_name = this.newlist[0].name;
         this.form_content = this.newlist[0].content;
         this.form_file = this.newlist[0].file;
@@ -53,8 +54,6 @@ export class EditPageComponent implements OnInit {
     }
 
     formSubmit() {
-        console.log(this.form);
-
         this.list.splice(this.index, 1);
         let newEdited = {
             name: this.form.value.name_f,
@@ -64,7 +63,6 @@ export class EditPageComponent implements OnInit {
             comment_author: this.form.value.form_comment_author_f,
             comment_created: this.form.value.form_comment_created_f
         };
-        console.log(newEdited);
         this.list.push(newEdited);
         localStorage.setItem('lists', JSON.stringify(this.list));
         // ---snackbar---
@@ -73,8 +71,11 @@ export class EditPageComponent implements OnInit {
             x.className = 'show';
             setTimeout(function () {
                 x.className = x.className.replace('show', '');
-            }, 3000);
+            }, 2000);
         }
+        setTimeout((router: Router) => {
+            this.router.navigate(['/']);
+        }, 2000);
     }
 
 }

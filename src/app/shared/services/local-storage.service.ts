@@ -1,4 +1,4 @@
-import {Injectable} from "@angular/core";
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export class LocalStorageService {
@@ -12,6 +12,5 @@ export class LocalStorageService {
 
     public setItem(key: string, data: any) {
         return localStorage.setItem(key, JSON.stringify(data));
-                            
     }
 }

@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {NewPageRoutingModule} from "./new-page-routing.module";
-import {NewPageComponent} from "./new-page.component";
-import {SharedModule} from "../../shared/shared.module";
-import {FormsModule} from "@angular/forms";
+import {NewPageRoutingModule} from './new-page-routing.module';
+import {NewPageComponent} from './new-page.component';
+import {SharedModule} from '../../shared/shared.module';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
     imports: [

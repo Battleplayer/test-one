@@ -3,7 +3,7 @@
 
     <span>{{item.name}}</span>
     <span>{{item.content}}</span>
-    <a routerLink="{{item.name}}" class=" btn btn-success">Info</a>
+    <a routerLink="/item/{{item.name}}" class=" btn btn-success">Info</a>
     <button class="btn btn-danger" (click)="delete(item)">Delete</button>
     <a routerLink="/edit/{{item.name}}" role="button " class="btn btn-warning">Edit</a>
   </div>

@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {ListService} from '../../shared/services/list.service';
 import {LocalStorageService} from '../../shared/services/local-storage.service';
 
 @Component({

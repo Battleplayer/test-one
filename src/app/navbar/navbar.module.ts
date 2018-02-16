@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {NavbarComponent} from './navbar.component';
-import {SharedModule} from "../shared/shared.module";
-import {NavbarRoutingModule} from "./navbar-routing.module";
+import {SharedModule} from '../shared/shared.module';
+import {NavbarRoutingModule} from './navbar-routing.module';
 
 @NgModule({
     imports: [

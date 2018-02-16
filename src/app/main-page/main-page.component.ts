@@ -1,4 +1,5 @@
 import {AfterContentChecked, Component} from '@angular/core';
+import {MethodsService} from '../shared/services/methods.service';
 
 @Component({
     selector: 'app-main-page',
@@ -9,13 +10,15 @@ export class MainPageComponent implements AfterContentChecked {
     list;
     lists;
 
+    constructor(private methods: MethodsService) {
+    }
+
     ngAfterContentChecked() {
         this.list = JSON.parse(localStorage.getItem('lists'));
     }
 
-    delete(item: any) {
+        delete(item: any) {
         let index = this.list.indexOf(item);
-        this.list.splice(index, 1);
-        localStorage.setItem('lists', JSON.stringify(this.list));
+        this.methods.delete(item, index);
     }
 }
